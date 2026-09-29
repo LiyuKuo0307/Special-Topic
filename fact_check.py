@@ -7,8 +7,8 @@
 from __future__ import annotations
 import json
 
-from .llm_client import LLMClient, MARK_FACT_CHECK, loads_llm_json
-from .schema import (ALL_LABELS, CREDIBILITY_LABELS, CRED_INSUFFICIENT,
+from llm_client import LLMClient, MARK_FACT_CHECK, loads_llm_json
+from schema import (ALL_LABELS, CREDIBILITY_LABELS, CRED_INSUFFICIENT,
                      CRED_NEEDS_REVIEW, CONFIDENT_LABELS)
 
 INSUFFICIENT_CONFIDENCE_CAP = 0.4
@@ -86,7 +86,7 @@ def apply_evidence_grounding_guardrail(fact: dict, evidence_hint: str) -> dict:
 
 def _one_fact_check(llm, prompt, topic, evidence_hint):
     """單次查核：呼叫 LLM → 穩健解析 → 護欄。失敗回 None（不崩）。"""
-    from .debug_log import log_event
+    from debug_log import log_event
     raw = ""
     try:
         raw = llm.generate(prompt)

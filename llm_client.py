@@ -8,7 +8,7 @@ import json
 import os
 import re
 
-from .schema import CRED_HIGH_FALSE, CRED_INSUFFICIENT, EVAL_KEYS
+from schema import CRED_HIGH_FALSE, CRED_INSUFFICIENT, EVAL_KEYS
 
 MARK_EXPAND = "【任務：關鍵字擴展】"
 MARK_DECOMPOSE = "【任務：主張拆解】"

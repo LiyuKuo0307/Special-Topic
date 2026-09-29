@@ -19,7 +19,7 @@ from __future__ import annotations
 import os
 import re
 import time
-from .llm_client import LLMClient
+from llm_client import LLMClient
 
 # 免費層候選型號（依序嘗試；可用 GEMINI_MODEL 覆蓋）。就算全過期，也會用 API 建議的型號自我修復。
 _CANDIDATE_MODELS = [
